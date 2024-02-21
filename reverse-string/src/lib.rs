@@ -1,5 +1,5 @@
 pub fn reverse(input: &str) -> String {
-    // todo!("Write a function to reverse {input}");
+     todo!("Write a function to reverse {input}");
 
     let input_input = input;
     let mut output = String::new();
