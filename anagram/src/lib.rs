@@ -9,9 +9,9 @@ pub fn anagrams_for<'a>(word: &str, possible_anagrams: &'a [&str]) -> HashSet<&'
         .iter()
         .filter(|&x| {
             let x_lower = x.to_lowercase();
-            x.len() == word_lower.len()
-                && x_lower != word_lower
-                && get_sorted(&x_lower) == word_sorted
+            x.len() == word_lower.len() // 길이가 같고
+                && x_lower != word_lower // 같은 단어가 아니고,
+                && get_sorted(&x_lower) == word_sorted // 정렬했을 때, 같은 단어가 아님.
         })
         .copied()
         .collect()
