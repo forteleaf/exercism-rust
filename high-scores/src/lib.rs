@@ -15,17 +15,17 @@ impl HighScores {
     }
 
     pub fn latest(&self) -> Option<u32> {
-        self.scores.last().copied()
+        self.scores.last().copied() // last() 마지막점수 반환 Option<u32>로 반환
     }
 
     pub fn personal_best(&self) -> Option<u32> {
-        self.scores.iter().max().copied()
+        self.scores.iter().max().copied() // Option<u32>로 반환
     }
 
     pub fn personal_top_three(&self) -> Vec<u32> {
         let mut sorted_scores = self.scores.clone();
-        sorted_scores.sort_unstable_by(|a, b| b.cmp(a));
-        sorted_scores.truncate(3);
+        sorted_scores.sort_unstable_by(|a, b| b.cmp(a)); // 내림차순으로 정렬
+        sorted_scores.truncate(3); // 상위 3개만 추출
         sorted_scores
     }
 }
